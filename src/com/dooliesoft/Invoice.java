@@ -1,140 +1,40 @@
 package com.dooliesoft;
 
-import java.util.ArrayList;
+import java.util.*;
 
-public class Invoice {
+class Invoice {
+    HashMap<String, String> csvColumnToXPathMap = null;
+    String senderID = null;
+    String messageReferenceNumber = null;
+    String documentDate = null;
+    String documentNumber = null;
+    String partnerID = null;
+    String bankAccount = null;
+    String name = null;
+    String referenceNumber = null;
+    String path = null;
+    String documentID = null;
+    String filename = null;
+    String totalInvoiceAmount = null;
+    String totalVATAmount = null;
+    String totalNetLineAmount = null;
 
-    private ArrayList<String> m_header = new ArrayList<>();
-    private String senderID;
-    private String messageReferenceNumber;
-    private String documentDate;
-    private String documentNumber;
-    private String partnerID;
-    private String bankAccount;
-    private String name;
-    private String referenceNumber;
-    private String path;
-    private String documentID;
-    private String filename;
-    private String totalInvoiceAmount;
-    private String totalVATAmount;
-    private String totalNetLineAmount;
+    HashMap<String, String> invoiceMap;
 
-    public Invoice(ArrayList<String> header) {
-        m_header = header;
+    public Invoice() {
+        invoiceMap = new HashMap<>();
     }
 
-
-    public void setSenderID(String senderID) {
-        this.senderID = senderID;
+    public void set(String key, String value) {
+        invoiceMap.put(key, value);
+    }
+    public String get(String key) {
+        return invoiceMap.get(key);
     }
 
-    public void setMessageReferenceNumber(String messageReferenceNumber) {
-        this.messageReferenceNumber = messageReferenceNumber;
-    }
-
-    public void setDocumentDate(String documentDate) {
-        this.documentDate = documentDate;
-    }
-
-    public void setDocumentNumber(String documentNumber) {
-        this.documentNumber = documentNumber;
-    }
-
-    public void setPartnerID(String partnerID) {
-        this.partnerID = partnerID;
-    }
-
-    public void setBankAccount(String bankAccount) {
-        this.bankAccount = bankAccount;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setReferenceNumber(String referenceNumber) {
-        this.referenceNumber = referenceNumber;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public void setDocumentID(String documentID) {
-        this.documentID = documentID;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public void setTotalInvoiceAmount(String totalInvoiceAmount) {
-        this.totalInvoiceAmount = totalInvoiceAmount;
-    }
-
-    public void setTotalVATAmount(String totalVATAmount) {
-        this.totalVATAmount = totalVATAmount;
-    }
-
-    public void setTotalNetLineAmount(String totalNetLineAmount) {
-        this.totalNetLineAmount = totalNetLineAmount;
-    }
-
-
-    public String getSenderID() {
-        return senderID;
-    }
-
-    public String getMessageReferenceNumber() {
-        return messageReferenceNumber;
-    }
-
-    public String getDocumentDate() {
-        return documentDate;
-    }
-
-    public String getDocumentNumber() {
-        return documentNumber;
-    }
-
-    public String getPartnerID() {
-        return partnerID;
-    }
-
-    public String getBankAccount() {
-        return bankAccount;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getReferenceNumber() {
-        return referenceNumber;
-    }
-
-    public String getPath() {
-        return path;
-    }
-
-    public String getDocumentID() {
-        return documentID;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public String getTotalInvoiceAmount() {
-        return totalInvoiceAmount;
-    }
-
-    public String getTotalVATAmount() {
-        return totalVATAmount;
-    }
-
-    public String getTotalNetLineAmount() {
-        return totalNetLineAmount;
+    public void printInCSV(LinkedHashMap<String, Integer> csvMap) {
+        for(String key: csvMap.keySet()) {
+            System.out.print(csvMap.get(key)+";");
+        }
     }
 }
