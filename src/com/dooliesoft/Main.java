@@ -21,7 +21,7 @@ public class Main {
 
     //public static final String FOLDER = "C:\\Users\\c158492\\Desktop\\CREDIT NOTE\\ZHUL\\Nouveau Dossier";
     //public static final String FOLDER = "C:\\Users\\fabrice\\Downloads\\Lot2";
-    public static final String FOLDER = "C:\\Users\\fabrice\\Downloads\\Test";
+    public static final String FOLDER = "C:\\Users\\fabrice\\Downloads\\Lot2\\New folder";
     public static final String CSV_SENDER_ID = "SenderID";
     public static final String CSV_MESSAGE_REFERENCE_NUMBER = "MessageReferenceNumber";
     public static final String CSV_DOCUMENT_DATE = "DocumentDate";
@@ -174,34 +174,6 @@ public class Main {
         writer.write("\n");
 
         for (Invoice invoice : invoices) {
-//            System.out.print(invoice.get(KEY_SENDER_ID));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_REFERENCE_NUMBER));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_DOCUMENT_DATE));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_DOCUMENT_NUMBER));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_PARTNER_ID));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_BANK_ACCOUNT));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_NAME));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_REFERENCE_NUMBER));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_PATH));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_DOCUMENT_ID));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_FILENAME));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_TOTAL_INVOICE_AMOUNT));
-//            System.out.print(";");
-//            System.out.print(invoice.get(KEY_TOTAL_VAT_AMOUNT));
-//            System.out.print(";");
-//            System.out.println(invoice.get(KEY_TOTAL_NET_LINE_AMOUNT));
-
             writer.write(invoice.get(KEY_SENDER_ID));
             writer.write(";");
             writer.write(invoice.get(KEY_REFERENCE_NUMBER));
